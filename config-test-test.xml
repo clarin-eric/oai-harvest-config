@@ -40,7 +40,7 @@
   <!-- ### actions to take on metadata formats (in order of preference) ### -->
   <actions>
     <format match="namespace" value="http://www.clarin.eu/cmd/1">
-      <action type="transform" file="resources/filter.xsl"/>
+      <action type="transform" file="https://raw.githubusercontent.com/clarin-eric/oai-harvest-config/develop/filter.xsl"/>
       <action type="save" dir="oai" suffix=".xml"/>
       <action type="split"/>
       <action type="save" dir="rec" suffix=".xml"/>
@@ -60,7 +60,7 @@
     <format match="prefix" value="olac">
       <action type="transform" file="https://raw.githubusercontent.com/clarin-eric/oai-harvest-config/develop/filter.xsl"/>
       <action type="save" dir="oai" suffix=".xml"/>
-      <action type="transform" file="https://raw.githubusercontent.com/clarin-eric/oai-harvest-config/develop/addOAISetName.xsl" cache=".oai-cache"/>
+      <action type="transform" file="resources/addOAISetName.xsl" cache=".oai-cache"/>
       <action type="split"/>
       <action type="save" dir="rec" suffix=".xml"/>
       <action type="transform" file="https://raw.githubusercontent.com/clarin-eric/metadata-conversion/olac-cmdi/olac-cmdi/olac2cmdi.xsl"/>
@@ -71,7 +71,7 @@
     <format match="prefix" value="oai_dc">
       <action type="transform" file="https://raw.githubusercontent.com/clarin-eric/oai-harvest-config/develop/filter.xsl"/>
       <action type="save" dir="oai" suffix=".xml"/>
-      <action type="transform" file="https://raw.githubusercontent.com/clarin-eric/oai-harvest-config/develop/addOAISetName.xsl" cache=".oai-cache"/>
+      <action type="transform" file="resources/addOAISetName.xsl" cache=".oai-cache"/>
       <action type="split"/>
       <action type="save" dir="rec" suffix=".xml"/>
       <action type="transform" file="https://raw.githubusercontent.com/clarin-eric/metadata-conversion/olac-cmdi/olac-cmdi/olac2cmdi.xsl"/>
