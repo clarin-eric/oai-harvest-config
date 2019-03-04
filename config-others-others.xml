@@ -83,7 +83,6 @@
     <provider url="https://catalog.ldc.upenn.edu/olac/ldc_catalog.xml" static="true" name="The LDC Corpus Catalog"/>
     <provider url="http://wals.info/languoid/oai" name="WALS Online"/>
     <provider url="http://wals.info/refdb_oai" name="WALS RefDB"/>
-    <provider url="http://ws02.iula.upf.edu/corpus_data/oai-iula/oai.pl" name="IULA-UPF Centre de Competència CLARIN"/>
     <provider url="http://redac.univ-tlse2.fr/metadata/oai/oai.pl" name="CLLE-ERSS Université de Toulouse-Le Mirail"/>
     <provider url="http://aholab.ehu.es/oai/" name="University of the Basque Country"/>
     <provider url="http://www.e-codices.unifr.ch/oai/oai.php?verb=Identify"/>
