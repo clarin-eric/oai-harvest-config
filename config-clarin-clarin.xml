@@ -118,7 +118,7 @@
       <config url="http://www.phonetik.uni-muenchen.de/cgi-bin/BASRepository/oaipmh/oai.pl" scenario="ListIdentifiers"/>
     </import>
     <!-- Virtual Collection Registry -->
-     <provider url="http://clarin.ids-mannheim.de/vcr/oai"/> 
+     <provider url="https://collections.clarin.eu/oai"/> 
     <!--
      In addition to the registry entries, there are some "D centres" that
 	   don't belong in the centre registry. They are manually included here.
