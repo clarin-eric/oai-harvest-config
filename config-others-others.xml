@@ -99,5 +99,14 @@
       CHECK: tech problems
     -->
     <provider url="http://oai.hab.de/" name="Wolfenbuettel Digital Library"/>
+    <provider url="https://oai.datacite.org/oai" name="YODA repository at Utrecht University">
+        <!--
+           Set with additional filtering through custom query, see 
+           https://support.datacite.org/docs/datacite-oai-pmh#section-arbitrary-queries
+           
+           base64('q=*.*&fq=subject:(6.2 OR 6.5)') = cT0qLiomZnE9c3ViamVjdDooNi4yIE9SIDYuNSk=
+        -->
+        <set>DELFT.UU~cT0qLiomZnE9c3ViamVjdDooNi4yIE9SIDYuNSk=</set>
+    </provider>
   </providers>
 </config>
