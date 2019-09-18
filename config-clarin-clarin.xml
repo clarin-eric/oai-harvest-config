@@ -108,13 +108,17 @@
       <!-- 
         Add endpoint specific configuration to providers defined in the registry.
       -->
+      <!-- MPI sometimes needs a bit more time -->
+      <config url="https://archive.mpi.nl/oai2" max-retry-count="5" retry-delay="10 30 60 360"/>
+      <!-- ACDH/ARCHE needs some time to gerenate the metadata -->
+      <config url="http://arche.acdh.oeaw.ac.at/oai" timeout="300" />
       <!-- Leipzig doesn't like too much time between calls within one session, GetRecord calls don't care -->
       <config url="https://clarinoai.informatik.uni-leipzig.de/oaiprovider/oai" scenario="ListIdentifiers"/>
       <!-- BAS runs sometimes into memory problems when its big CMD records get processed in batch -->
       <config url="http://www.phonetik.uni-muenchen.de/cgi-bin/BASRepository/oaipmh/oai.pl" scenario="ListIdentifiers"/>
     </import>
     <!-- Virtual Collection Registry -->
-     <provider url="http://clarin.ids-mannheim.de/vcr/oai"/> 
+     <provider url="https://collections.clarin.eu/oai"/> 
     <!--
      In addition to the registry entries, there are some "D centres" that
 	   don't belong in the centre registry. They are manually included here.
@@ -124,11 +128,13 @@
      Currently included:
      - Utrecht University Library and Het Nederlands
      - Instituut voor Beeld en Geluid.
-    -->
+    
     <provider url="http://dspace.library.uu.nl/oai/clarin"/>
     <provider url="http://oai.beeldengeluid.nl/academia/oai"/>
+    -->
+    
     <!-- extra -->
-    <provider url="http://phonotheque.mmsh.huma-num.fr/oai/provider"/>
+
     <provider url="https://repository.ortolang.fr/api/oai"/>
     <provider url="https://dataverse.no/oai">
       <set>trolling</set>
