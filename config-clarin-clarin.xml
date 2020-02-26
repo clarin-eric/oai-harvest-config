@@ -140,5 +140,8 @@
       <set>trolling</set>
     </provider>
     <provider url="https://lat1.lis.soas.ac.uk/ds/oaiprovider/oai2"/>
+    <provider url="https://arche.acdh.oeaw.ac.at/oai">
+      <set>clarin-vlo</set>
+    </provider>
   </providers>
 </config>
