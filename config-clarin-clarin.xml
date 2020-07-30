@@ -94,7 +94,7 @@
   <!-- ### list of providers ### -->
   <providers>
     <import>
-      <registry url="https://centres.clarin.eu/restxml/"/>
+      <registry url="https://centres.clarin.eu/api/model"/>
       <includeOaiPmhSetTypes>*</includeOaiPmhSetTypes>
       <excludeOaiPmhSetTypes>WebLicht</excludeOaiPmhSetTypes>
       <!--
