@@ -74,7 +74,6 @@
 
   <!-- ### list of providers ### -->
   <providers>
-    <provider url="http://www.language-archives.org/hosted/acl.xml" static="true" name="A Digital Archive of Research Papers in Computational Linguistics"/>
     <provider url="http://cla.berkeley.edu/olac.xml" static="true"/>
     <provider url="http://www.elra.info/elrac/elra_catalogue.xml" static="true" name="European Language Resources Association"/>
     <provider url="http://linguistlist.org/olac/metadata-catalog.cfm" name="The LINGUIST List Language Resources"/>
@@ -83,7 +82,6 @@
     <provider url="https://catalog.ldc.upenn.edu/olac/ldc_catalog.xml" static="true" name="The LDC Corpus Catalog"/>
     <provider url="http://wals.info/languoid/oai" name="WALS Online"/>
     <provider url="http://wals.info/refdb_oai" name="WALS RefDB"/>
-    <provider url="http://ws02.iula.upf.edu/corpus_data/oai-iula/oai.pl" name="IULA-UPF Centre de Competència CLARIN"/>
     <provider url="http://redac.univ-tlse2.fr/metadata/oai/oai.pl" name="CLLE-ERSS Université de Toulouse-Le Mirail"/>
     <provider url="http://aholab.ehu.es/oai/" name="University of the Basque Country"/>
     <provider url="http://www.e-codices.unifr.ch/oai/oai.php?verb=Identify"/>
@@ -101,5 +99,14 @@
       CHECK: tech problems
     -->
     <provider url="http://oai.hab.de/" name="Wolfenbuettel Digital Library"/>
+    <provider url="https://oai.datacite.org/oai" name="YODA repository at Utrecht University">
+        <!--
+           Set with additional filtering through custom query, see 
+           https://support.datacite.org/docs/datacite-oai-pmh#section-arbitrary-queries
+           
+           base64('subjects.subject:(*6.2* OR *6.5*)') = c3ViamVjdHMuc3ViamVjdDooKjYuMiogT1IgKjYuNSop
+        -->
+        <set>DELFT.UU~c3ViamVjdHMuc3ViamVjdDooKjYuMiogT1IgKjYuNSop</set>
+    </provider>
   </providers>
 </config>
