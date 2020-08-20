@@ -117,7 +117,7 @@
       <!-- BAS runs sometimes into memory problems when its big CMD records get processed in batch -->
       <config url="http://www.phonetik.uni-muenchen.de/cgi-bin/BASRepository/oaipmh/oai.pl" scenario="ListIdentifiers"/>
       <!-- Talkbank's ListRecords is broken -->
-      <config url="https://oai.talkbank.org/oai/provider" scenario="ListIdentifiers"/>
+      <config url="http://oai.talkbank.org/oai/provider" scenario="ListIdentifiers"/>
     </import>
     <!-- Virtual Collection Registry -->
      <provider url="https://collections.clarin.eu/oai"/> 
