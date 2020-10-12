@@ -1,0 +1,9 @@
+language: minimal
+
+addons:
+  apt:
+    packages:
+      # Needed for `xmllint`.
+      - libxml2-utils
+
+script: xmllint config-clarin-clarin.xml && xmllint config-others-others.xml
