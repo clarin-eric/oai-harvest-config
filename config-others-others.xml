@@ -10,7 +10,7 @@
     <max-retry-count>2</max-retry-count>
 
     <!-- Delay between retries of a record (milliseconds). -->
-    <retry-delay>10000</retry-delay>
+    <retry-delay>10</retry-delay>
 
     <!-- Maximum number of concurrent harvester threads -->
     <max-jobs>6</max-jobs>
