@@ -53,52 +53,36 @@
   <!-- ### actions to take on metadata formats (in order of preference) ### -->
   <actions>
     <format match="namespace" value="http://www.clarin.eu/cmd/1">
-<!-- 
       <action type="save" dir="oai" suffix=".xml"/>
- -->
       <action type="split"/>
-<!-- 
       <action type="save" dir="rec" suffix=".xml"/>
- -->
       <action type="strip"/>
       <action type="save" dir="cmdi-1_2" suffix=".xml"/>
     </format>
     <format match="namespace" value="http://www.clarin.eu/cmd/">
-<!-- 
       <action type="save" dir="oai" suffix=".xml"/>
- -->
       <action type="split"/>
-<!-- 
       <action type="save" dir="rec" suffix=".xml"/>
- -->
       <action type="strip"/>
       <action type="save" dir="cmdi-1_1" suffix=".xml"/>
       <action type="transform" file="https://infra.clarin.eu/CMDI/1.x/upgrade/cmd-record-1_1-to-1_2.xsl" cache="cache"/>
       <action type="save" dir="cmdi-1_2" suffix=".xml"/>
     </format>
     <format match="prefix" value="olac">
-<!-- 
       <action type="save" dir="oai" suffix=".xml"/>
- -->
       <action type="transform" file="resources/addOAISetName.xsl" cache="cache"/>
       <action type="split"/>
-<!-- 
       <action type="save" dir="rec" suffix=".xml"/>
- -->
       <action type="transform" file="https://raw.githubusercontent.com/clarin-eric/metadata-conversion/olac-cmdi/olac-cmdi/olac2cmdi.xsl"/>
       <action type="save" dir="cmdi-1_1" suffix=".xml"/>
       <action type="transform" file="https://infra.clarin.eu/CMDI/1.x/upgrade/cmd-record-1_1-to-1_2.xsl" cache="cache"/>
       <action type="save" dir="cmdi-1_2" suffix=".xml"/>
     </format>
     <format match="prefix" value="oai_dc">
-<!-- 
       <action type="save" dir="oai" suffix=".xml"/>
- -->
       <action type="transform" file="resources/addOAISetName.xsl" cache="cache"/>
       <action type="split"/>
-<!-- 
       <action type="save" dir="rec" suffix=".xml"/>
- -->
       <action type="transform" file="https://raw.githubusercontent.com/clarin-eric/metadata-conversion/olac-cmdi/olac-cmdi/olac2cmdi.xsl"/>
       <action type="save" dir="cmdi-1_1" suffix=".xml"/>
       <action type="transform" file="https://infra.clarin.eu/CMDI/1.x/upgrade/cmd-record-1_1-to-1_2.xsl" cache="cache"/>
@@ -160,7 +144,9 @@
     <provider url="https://dataverse.no/oai">
       <set>trolling</set>
     </provider>
+	  
     <provider url="https://lat1.lis.soas.ac.uk/ds/oaiprovider/oai2"/>
+    
     <provider url="https://arche.acdh.oeaw.ac.at/oaipmh/" timeout="300">
       <set>clarin-vlo</set>
     </provider>
