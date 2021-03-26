@@ -111,7 +111,7 @@
         Add endpoint specific configuration to providers defined in the registry.
       -->
       <!-- MPI sometimes needs a bit more time -->
-      <config url="https://archive.mpi.nl/oai2" max-retry-count="5" retry-delay="10 30 60 360"/>
+      <config url="https://archive.mpi.nl/oai2" max-retry-count="5" retry-delay="10 30 60 600"/>
       <!-- ACDH/ARCHE needs some time to gerenate the metadata -->
       <config url="http://arche.acdh.oeaw.ac.at/oai" timeout="300" />
       <!-- Leipzig doesn't like too much time between calls within one session, GetRecord calls don't care -->
