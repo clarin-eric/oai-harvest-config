@@ -119,7 +119,8 @@
       <!-- Talkbank's ListRecords is broken -->
       <config url="http://oai.talkbank.org/oai/provider" scenario="ListIdentifiers"/>
       <!-- BAS runs sometimes into memory problems when its big CMD records get processed in batch -->
-      <config url="http://www.phonetik.uni-muenchen.de/cgi-bin/BASRepository/oaipmh/oai.pl" scenario="ListIdentifiers"/>
+      <!-- <config url="http://www.phonetik.uni-muenchen.de/cgi-bin/BASRepository/oaipmh/oai.pl" scenario="ListIdentifiers"/> -->
+      <config url="http://www.phonetik.uni-muenchen.de/cgi-bin/BASRepository/oaipmh/oai.pl" timeout="300"/>
       <!-- Talkbank's ListRecords is broken -->
       <config url="http://oai.talkbank.org/oai/provider" scenario="ListIdentifiers"/>
     </import>
