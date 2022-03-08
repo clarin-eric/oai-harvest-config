@@ -100,6 +100,7 @@
     <provider url="https://b2share.eudat.eu/api/oai2d" name="B2SHARE">
       <set>0afede87-2bf2-4d89-867e-d2ee57251c62</set>
     </provider>
+    <provider url="https://clarin-belarus.corpus.by/provider" name="corpus.by"/> 
     <!-- 
       CHECK: timeouts
     -->
