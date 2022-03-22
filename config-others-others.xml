@@ -49,6 +49,24 @@
 
   <!-- ### actions to take on metadata formats (in order of preference) ### -->
   <actions>
+    <!-- CMDI 1.2 -->
+    <format match="namespace" value="http://www.clarin.eu/cmd/1">
+      <action type="save" dir="oai" suffix=".xml"/>
+      <action type="split"/>
+      <!--<action type="save" dir="rec" suffix=".xml"/>-->
+      <action type="strip"/>
+      <action type="save" dir="cmdi-1_2" suffix=".xml"/>
+    </format>
+    <!-- CMDI 1.1 -->
+    <format match="namespace" value="http://www.clarin.eu/cmd/">
+      <action type="save" dir="oai" suffix=".xml"/>
+      <action type="split"/>
+      <!--<action type="save" dir="rec" suffix=".xml"/>-->
+      <action type="strip"/>
+      <action type="save" dir="cmdi-1_1" suffix=".xml"/>
+      <action type="transform" file="https://infra.clarin.eu/CMDI/1.x/upgrade/cmd-record-1_1-to-1_2.xsl" cache="cache"/>
+      <action type="save" dir="cmdi-1_2" suffix=".xml"/>
+    </format>
     <!-- OLAC -->
     <format match="prefix" value="olac">
       <action type="save" dir="oai" suffix=".xml"/>
