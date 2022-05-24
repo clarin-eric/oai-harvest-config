@@ -33,7 +33,10 @@
     in question must have been harvested previously. If any of these conditions
     is not fulfilled, this setting has no effect.-->
     <incremental>false</incremental>
-    
+
+    <!-- Protocol to use, for example, OAI-PMH or NDE -->
+    <protocol>OAI-PMH</protocol>
+
     <scenario>ListRecords</scenario>
   </settings>
 
