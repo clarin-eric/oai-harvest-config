@@ -127,7 +127,7 @@
       <!-- MPI sometimes needs a bit more time -->
       <config url="https://archive.mpi.nl/oai2" max-retry-count="5" retry-delay="10 30 60 600"/>
       <!-- ACDH/ARCHE needs some time to gerenate the metadata -->
-      <config url="https://arche.acdh.oeaw.ac.at/oaipmh/" timeout="300" />
+      <config url="https://arche.acdh.oeaw.ac.at/oaipmh/" timeout="300" scenario="ListIdentifiers"/>
       <!-- Leipzig doesn't like too much time between calls within one session, GetRecord calls don't care -->
       <config url="https://clarinoai.informatik.uni-leipzig.de/oaiprovider/oai" scenario="ListIdentifiers"/>
       <!-- BAS runs sometimes into memory problems when its big CMD records get processed in batch -->
