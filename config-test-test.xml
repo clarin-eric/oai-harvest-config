@@ -32,6 +32,7 @@
          number of files. -->
     <dir path="oai-rec" id="rec" max-files="0"/>
     <dir path="oai-pmh" id="oai" max-files="0"/>
+    <dir path="oai-pmh-filtered" id="oai-filtered" max-files="0"/>
     <dir path="results/cmdi-1_1" id="cmdi-1_1" max-files="0"/>
     <dir path="results/cmdi" id="cmdi-1_2" max-files="0"/>
   </directories>
@@ -40,7 +41,7 @@
   <!-- ### actions to take on metadata formats (in order of preference) ### -->
   <actions>
     <format match="namespace" value="http://www.clarin.eu/cmd/1">
-      <action type="transform" file="https://raw.githubusercontent.com/clarin-eric/oai-harvest-config/develop/filter.xsl"/>
+      <!--<action type="transform" file="https://raw.githubusercontent.com/clarin-eric/oai-harvest-config/develop/cmd-1_2-filter.xsl"/>-->
       <action type="save" dir="oai" suffix=".xml"/>
       <action type="split"/>
       <action type="save" dir="rec" suffix=".xml"/>
@@ -48,7 +49,7 @@
       <action type="save" dir="cmdi-1_2" suffix=".xml" history="true"/>
     </format>
     <format match="namespace" value="http://www.clarin.eu/cmd/">
-      <action type="transform" file="https://raw.githubusercontent.com/clarin-eric/oai-harvest-config/develop/filter.xsl"/>
+      <!--<action type="transform" file="https://raw.githubusercontent.com/clarin-eric/oai-harvest-config/develop/cmd-1_1filter.xsl"/>-->
       <action type="save" dir="oai" suffix=".xml"/>
       <action type="split"/>
       <action type="save" dir="rec" suffix=".xml"/>
@@ -58,7 +59,7 @@
       <action type="save" dir="cmdi-1_2" suffix=".xml" history="true"/>
     </format>
     <format match="prefix" value="olac">
-      <action type="transform" file="https://raw.githubusercontent.com/clarin-eric/oai-harvest-config/develop/filter.xsl"/>
+     <!-- <action type="transform" file="https://raw.githubusercontent.com/clarin-eric/oai-harvest-config/develop/filter.xsl"/>-->
       <action type="save" dir="oai" suffix=".xml"/>
       <action type="transform" file="resources/addOAISetName.xsl" cache=".oai-cache"/>
       <action type="split"/>
@@ -69,8 +70,9 @@
       <action type="save" dir="cmdi-1_2" suffix=".xml" history="true"/>
     </format>
     <format match="prefix" value="oai_dc">
-      <action type="transform" file="https://raw.githubusercontent.com/clarin-eric/oai-harvest-config/develop/filter.xsl"/>
       <action type="save" dir="oai" suffix=".xml"/>
+      <action type="transform" file="https://raw.githubusercontent.com/clarin-eric/oai-harvest-config/develop/dc-filter.xsl"/>
+      <action type="save" dir="oai-filtered" suffix=".xml"/>
       <action type="transform" file="resources/addOAISetName.xsl" cache=".oai-cache"/>
       <action type="split"/>
       <action type="save" dir="rec" suffix=".xml"/>
@@ -110,9 +112,19 @@
       <filter>Subject and Keywords = Humanities - Languages and literature (6.2) or Humanities - Other humanities (6.5))</filter>
       <set>DELFT.UU</set>
     </provider>
--->
+
     <provider url="https://www.meertens.knaw.nl/flat/oai2">
       <filter>dwangarbeider</filter>
     </provider>
+-->
+    <provider url="https://calames.abes.fr/oai/oai2.aspx" scenario="ListIdentifiers">
+      <set>130019801</set>
+    </provider>
+    <povider url="https://elar.bbaw.de/oai-pmh/"  scenario="ListIdentifiers">
+      <xpath-filter>not(starts-with(./oai:metadata/oai_dc:dc/dc:identifier,'oai:io:'))</xpath-filter>
+    </povider>
+    <!--<provider url="ids">
+      <xpath-filter></xpath-filter>
+    </provider>-->
   </providers>
 </config>
