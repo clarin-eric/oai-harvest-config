@@ -137,5 +137,13 @@
     </import>
     <!-- Virtual Collection Registry -->
      <provider url="https://collections.clarin.eu/oai"/>
+    <!--
+        FIN-CLARIN is harvested from the same endpoint as CLARINO but is defined separately here to avoid being listed under the same national project.
+        Note that the double slash in the URL is not a typo, but is there to meet the unique endpoint URL requirement.
+        See <https://github.com/clarin-eric/metadata-curation/issues/12>.
+    -->
+    <provider url="https://clarino.uib.no//oai" name="FIN-CLARIN">
+      <set>FIN-CLARIN</set>
+    </provider>
   </providers>
 </config>
