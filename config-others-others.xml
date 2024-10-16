@@ -115,7 +115,7 @@
   <providers>
     <provider url="http://cla.berkeley.edu/olac.xml" static="true"/>
     <provider url="http://www.elra.info/elrac/elra_catalogue.xml" static="true" name="European Language Resources Association"/>
-    <provider url="http://linguistlist.org/olac/metadata-catalog.cfm" name="The LINGUIST List Language Resources"/>
+    <provider url="http://www.language-archives.org/cgi-bin/olaca3.pl" name="The LINGUIST List Language Resources"/>
     <provider url="http://catalog.paradisec.org.au/oai/item" name="Pacific And Regional Archive for Digital Sources in Endangered Cultures (PARADISEC)"/>
     <provider url="http://www.language-archives.org/hosted/rosettaproject.org.xml" static="true"/>
     <provider url="https://catalog.ldc.upenn.edu/olac/ldc_catalog.xml" static="true" name="The LDC Corpus Catalog"/>
