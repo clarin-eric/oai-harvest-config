@@ -133,7 +133,6 @@
       CHECK: timeouts
     -->
     <provider url="http://161.116.36.206/~publicacions/oai/oai.pl" name="Universitat de Barcelona"/>
-    <provider url="http://langtech1.ilc.cnr.it:8152/fedora/oai" name="Meta-Share Repository at ILC"/>
     <!--
       CHECK: tech problems
     -->
