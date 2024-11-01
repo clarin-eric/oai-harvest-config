@@ -149,8 +149,6 @@
            base64('subjects.subject:(*6.2* OR *6.5*)') = c3ViamVjdHMuc3ViamVjdDooKjYuMiogT1IgKjYuNSop
         -->
         <set>DELFT.UU~c3ViamVjdHMuc3ViamVjdDooKjYuMiogT1IgKjYuNSop</set>
-        <!-- Swedish Language Bank -->
-        <set>SND.SPRKB</set>
     </provider>
     <provider url="https://snd.se/oai-pmh" name="Swedish National Data Service">
         <!-- ISOF, see https://sprakresurser.isof.se/ -->
