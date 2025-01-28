@@ -144,15 +144,23 @@
     <provider url="http://oai.hab.de/" name="Wolfenbuettel Digital Library"/>
     <provider url="https://oai.datacite.org/oai" name="DataCite">
         <!--
-           YODA repository at Utrecht University
-      
-           Set with additional filtering through custom query, see 
+           Sets with additional filtering through custom query, see 
            https://support.datacite.org/docs/datacite-oai-pmh#section-arbitrary-queries
-           
+        -->
+      
+        <!--
+           YODA repository at Utrecht University
            base64('subjects.subject:(*6.2* OR *6.5*)') = c3ViamVjdHMuc3ViamVjdDooKjYuMiogT1IgKjYuNSop
         -->
         <set>DELFT.UU~c3ViamVjdHMuc3ViamVjdDooKjYuMiogT1IgKjYuNSop</set>
-        <!-- Swedish Language Bank -->
+      
+        <!--
+           RDR (Radboud university) CLS and RICH
+           base64('prefix:10.34973 AND ((identifiers.identifier:*/rich/* OR identifiers.identifier:*/cls/*) AND NOT((rightsList.rightsUri:*closedAccess)))')
+        -->
+        <set>DELFT.RU~cHJlZml4OjEwLjM0OTczIEFORCAoKGlkZW50aWZpZXJzLmlkZW50aWZpZXI6Ki9yaWNoLyogT1IgaWRlbnRpZmllcnMuaWRlbnRpZmllcjoqL2Nscy8qKSBBTkQgTk9UKChyaWdodHNMaXN0LnJpZ2h0c1VyaToqY2xvc2VkQWNjZXNzKSkp</set>
+      
+        <!-- Swedish Language Bank (unfiltered) -->
         <set>SND.SPRKB</set>
     </provider>
     <provider url="https://snd.se/oai-pmh" name="Swedish National Data Service">
