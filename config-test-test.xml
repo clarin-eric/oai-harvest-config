@@ -117,12 +117,15 @@
       <filter>dwangarbeider</filter>
     </provider>
 -->
+	<provider url="https://repository.clarin.is/repository/oai/request"/>
+<!--
     <provider url="https://calames.abes.fr/oai/oai2.aspx" scenario="ListIdentifiers">
       <set>130019801</set>
     </provider>
     <povider url="https://elar.bbaw.de/oai-pmh/"  scenario="ListIdentifiers">
       <xpath-filter>not(starts-with(./oai:metadata/oai_dc:dc/dc:identifier,'oai:io:'))</xpath-filter>
     </povider>
+-->
     <!--<provider url="ids">
       <xpath-filter></xpath-filter>
     </provider>-->
