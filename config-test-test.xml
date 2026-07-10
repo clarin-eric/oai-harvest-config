@@ -117,7 +117,8 @@
       <filter>dwangarbeider</filter>
     </provider>
 -->
-	<provider url="https://repository.clarin.is/repository/oai/request"/>
+<!-- 	<provider url="https://repository.clarin.is/repository/oai/request"/> -->
+	<provider url="https://mdc-oai.clarin-dev.eu/provider"/>
 <!--
     <provider url="https://calames.abes.fr/oai/oai2.aspx" scenario="ListIdentifiers">
       <set>130019801</set>
