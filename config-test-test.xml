@@ -4,7 +4,7 @@
   <!-- ### configuration settings ### -->
   <settings>
     <!-- Working directory. -->
-    <workdir>/home/kj/temp/oai/workspace</workdir>
+    <workdir>workspace</workdir>
 
     <!-- Maximum number of attempts per record before giving up. -->
     <max-retry-count>2</max-retry-count>
