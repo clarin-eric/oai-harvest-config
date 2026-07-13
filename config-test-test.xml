@@ -30,8 +30,6 @@
     <incremental>false</incremental>
     
     <scenario>ListRecords</scenario>
-    
-    <map-file>map.csv</map-file>
   </settings>
 
   <!-- ### output directories (referenced in the action section) ### -->
