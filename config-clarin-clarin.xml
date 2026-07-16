@@ -52,6 +52,7 @@
 
   <!-- ### actions to take on metadata formats (in order of preference) ### -->
   <actions>
+    <!-- CMDI 1.2 -->
     <format match="namespace" value="http://www.clarin.eu/cmd/1">
       <action type="save" dir="oai" suffix=".xml"/>
       <action type="split"/>
@@ -59,6 +60,7 @@
       <action type="strip"/>
       <action type="save" dir="cmdi-1_2" suffix=".xml"/>
     </format>
+    <!-- CMDI 1.1 -->
     <format match="namespace" value="http://www.clarin.eu/cmd/">
       <action type="save" dir="oai" suffix=".xml"/>
       <action type="split"/>
@@ -68,6 +70,7 @@
       <action type="transform" file="https://infra.clarin.eu/CMDI/1.x/upgrade/cmd-record-1_1-to-1_2.xsl" cache="cache"/>
       <action type="save" dir="cmdi-1_2" suffix=".xml"/>
     </format>
+    <!-- OLAC -->
     <format match="prefix" value="olac">
       <action type="save" dir="oai" suffix=".xml"/>
       <action type="transform" file="resources/addOAISetName.xsl" cache="cache"/>
@@ -78,6 +81,26 @@
       <action type="transform" file="https://infra.clarin.eu/CMDI/1.x/upgrade/cmd-record-1_1-to-1_2.xsl" cache="cache"/>
       <action type="save" dir="cmdi-1_2" suffix=".xml"/>
     </format>
+    <!-- DataCite -->    
+    <format match="prefix" value="oai_datacite">
+      <action type="save" dir="oai" suffix=".xml"/>
+      <action type="transform" file="resources/addOAISetName.xsl" cache="cache"/>
+      <action type="split"/>
+      <action type="strip"/>
+      <!-- <action type="save" dir="rec" suffix=".xml"/> -->
+      <action type="transform" file="https://raw.githubusercontent.com/clarin-eric/metadata-conversion/master/datacite-cmdi/datacite_to_cmdi.xsl"/>
+      <action type="save" dir="cmdi-1_2" suffix=".xml"/>
+    </format>
+    <format match="prefix" value="datacite">
+      <action type="save" dir="oai" suffix=".xml"/>
+      <action type="transform" file="resources/addOAISetName.xsl" cache="cache"/>
+      <action type="split"/>
+      <action type="strip"/>
+      <!-- <action type="save" dir="rec" suffix=".xml"/> -->
+      <action type="transform" file="https://raw.githubusercontent.com/clarin-eric/metadata-conversion/master/datacite-cmdi/datacite_to_cmdi.xsl"/>
+      <action type="save" dir="cmdi-1_2" suffix=".xml"/>
+    </format>
+    <!-- Dublin Core -->
     <format match="prefix" value="oai_dc">
       <action type="save" dir="oai" suffix=".xml"/>
       <action type="transform" file="resources/addOAISetName.xsl" cache="cache"/>
@@ -113,43 +136,25 @@
       <!-- MPI sometimes needs a bit more time -->
       <config url="https://archive.mpi.nl/oai2" max-retry-count="5" retry-delay="10 30 60 600"/>
       <!-- ACDH/ARCHE needs some time to gerenate the metadata -->
-      <config url="http://arche.acdh.oeaw.ac.at/oai" timeout="300" />
+      <config url="https://arche.acdh.oeaw.ac.at/oaipmh/" timeout="300" scenario="ListIdentifiers"/>
       <!-- Leipzig doesn't like too much time between calls within one session, GetRecord calls don't care -->
       <config url="https://clarinoai.informatik.uni-leipzig.de/oaiprovider/oai" scenario="ListIdentifiers"/>
       <!-- Talkbank's ListRecords is broken -->
       <config url="http://oai.talkbank.org/oai/provider" scenario="ListIdentifiers"/>
       <!-- BAS runs sometimes into memory problems when its big CMD records get processed in batch -->
-      <!-- <config url="http://www.phonetik.uni-muenchen.de/cgi-bin/BASRepository/oaipmh/oai.pl" scenario="ListIdentifiers"/> -->
-      <config url="http://www.phonetik.uni-muenchen.de/cgi-bin/BASRepository/oaipmh/oai.pl" timeout="300"/>
-      <!-- Talkbank's ListRecords is broken -->
-      <config url="http://oai.talkbank.org/oai/provider" scenario="ListIdentifiers"/>
+      <config url="http://www.phonetik.uni-muenchen.de/cgi-bin/BASRepository/oaipmh/oai.pl" scenario="ListIdentifiers" timeout="300"/>
+      <!-- CELR (Tartu) throws an error with 'verb=ListRecords&metadataPrefix=cmdi' but GetRecord calls seem to work -->
+      <config url="https://metashare.ut.ee/oai_pmh/" scenario="ListIdentifiers"/>
     </import>
     <!-- Virtual Collection Registry -->
-     <provider url="https://collections.clarin.eu/oai"/> 
+     <provider url="https://collections.clarin.eu/oai"/>
     <!--
-     In addition to the registry entries, there are some "D centres" that
-	   don't belong in the centre registry. They are manually included here.
-	   If one is later added to the registry the entry should be removed from
-	   this file.
-
-     Currently included:
-     - Utrecht University Library and Het Nederlands
-     - Instituut voor Beeld en Geluid.
-    
-    <provider url="http://dspace.library.uu.nl/oai/clarin"/>
-    <provider url="http://oai.beeldengeluid.nl/academia/oai"/>
+        FIN-CLARIN is harvested from the same endpoint as CLARINO but is defined separately here to avoid being listed under the same national project.
+        Note that the double slash in the URL is not a typo, but is there to meet the unique endpoint URL requirement.
+        See <https://github.com/clarin-eric/metadata-curation/issues/12>.
     -->
-    
-    <!-- extra -->
-
-    <provider url="https://dataverse.no/oai">
-      <set>trolling</set>
-    </provider>
-	  
-    <provider url="https://lat1.lis.soas.ac.uk/ds/oaiprovider/oai2"/>
-    
-    <provider url="https://arche.acdh.oeaw.ac.at/oaipmh/" timeout="300">
-      <set>clarin-vlo</set>
+    <provider url="https://clarino.uib.no//oai" name="FIN-CLARIN">
+      <set>FIN-CLARIN</set>
     </provider>
   </providers>
 </config>

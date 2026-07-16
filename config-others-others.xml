@@ -49,6 +49,25 @@
 
   <!-- ### actions to take on metadata formats (in order of preference) ### -->
   <actions>
+    <!-- CMDI 1.2 -->
+    <format match="namespace" value="http://www.clarin.eu/cmd/1">
+      <action type="save" dir="oai" suffix=".xml"/>
+      <action type="split"/>
+      <!--<action type="save" dir="rec" suffix=".xml"/>-->
+      <action type="strip"/>
+      <action type="save" dir="cmdi-1_2" suffix=".xml"/>
+    </format>
+    <!-- CMDI 1.1 -->
+    <format match="namespace" value="http://www.clarin.eu/cmd/">
+      <action type="save" dir="oai" suffix=".xml"/>
+      <action type="split"/>
+      <!--<action type="save" dir="rec" suffix=".xml"/>-->
+      <action type="strip"/>
+      <action type="save" dir="cmdi-1_1" suffix=".xml"/>
+      <action type="transform" file="https://infra.clarin.eu/CMDI/1.x/upgrade/cmd-record-1_1-to-1_2.xsl" cache="cache"/>
+      <action type="save" dir="cmdi-1_2" suffix=".xml"/>
+    </format>
+    <!-- OLAC -->
     <format match="prefix" value="olac">
       <action type="save" dir="oai" suffix=".xml"/>
       <action type="transform" file="resources/addOAISetName.xsl" cache="cache"/>
@@ -59,6 +78,26 @@
       <action type="transform" file="https://infra.clarin.eu/CMDI/1.x/upgrade/cmd-record-1_1-to-1_2.xsl" cache="cache"/>
       <action type="save" dir="cmdi-1_2" suffix=".xml"/>
     </format>
+    <!-- DataCite -->    
+    <format match="prefix" value="oai_datacite">
+      <action type="save" dir="oai" suffix=".xml"/>
+      <action type="transform" file="resources/addOAISetName.xsl" cache="cache"/>
+      <action type="split"/>
+      <action type="strip"/>
+      <!-- <action type="save" dir="rec" suffix=".xml"/> -->
+      <action type="transform" file="https://raw.githubusercontent.com/clarin-eric/metadata-conversion/master/datacite-cmdi/datacite_to_cmdi.xsl"/>
+      <action type="save" dir="cmdi-1_2" suffix=".xml"/>
+    </format>
+    <format match="prefix" value="datacite">
+      <action type="save" dir="oai" suffix=".xml"/>
+      <action type="transform" file="resources/addOAISetName.xsl" cache="cache"/>
+      <action type="split"/>
+      <action type="strip"/>
+      <!-- <action type="save" dir="rec" suffix=".xml"/> -->
+      <action type="transform" file="https://raw.githubusercontent.com/clarin-eric/metadata-conversion/master/datacite-cmdi/datacite_to_cmdi.xsl"/>
+      <action type="save" dir="cmdi-1_2" suffix=".xml"/>
+    </format>
+    <!-- Dublin Core -->
     <format match="prefix" value="oai_dc">
       <action type="save" dir="oai" suffix=".xml"/>
       <action type="transform" file="resources/addOAISetName.xsl" cache="cache"/>
@@ -75,8 +114,7 @@
   <!-- ### list of providers ### -->
   <providers>
     <provider url="http://cla.berkeley.edu/olac.xml" static="true"/>
-    <provider url="http://www.elra.info/elrac/elra_catalogue.xml" static="true" name="European Language Resources Association"/>
-    <provider url="http://linguistlist.org/olac/metadata-catalog.cfm" name="The LINGUIST List Language Resources"/>
+    <provider url="http://www.elra.info/elrac/elra_catalogue.xml" static="true" timeout="300" name="European Language Resources Association"/>
     <provider url="http://catalog.paradisec.org.au/oai/item" name="Pacific And Regional Archive for Digital Sources in Endangered Cultures (PARADISEC)"/>
     <provider url="http://www.language-archives.org/hosted/rosettaproject.org.xml" static="true"/>
     <provider url="https://catalog.ldc.upenn.edu/olac/ldc_catalog.xml" static="true" name="The LDC Corpus Catalog"/>
@@ -88,24 +126,46 @@
     <provider url="https://b2share.eudat.eu/api/oai2d" name="B2SHARE">
       <set>0afede87-2bf2-4d89-867e-d2ee57251c62</set>
     </provider>
+    <provider url="https://mdc-oai.clarin.eu/provider" name="Mozilla Data Collective" />
+    <provider url="https://europeana-oai.clarin.eu/provider" name="Europeana"/>
+    <provider url="https://clarin-belarus.corpus.by/provider" name="corpus.by"/> 
+
+    <!-- Linguist list: content to be evaluated before re-enabling -->
+    <!--     
+        <provider url="http://www.language-archives.org/cgi-bin/olaca3.pl" name="The LINGUIST List Language Resources"/> 
+    -->
+    
     <!-- 
       CHECK: timeouts
     -->
-    <provider url="http://www.spectrum.uni-bielefeld.de/langdoc/olac.xml" static="true" name="U Bielefeld Language Archive"/>
     <provider url="http://161.116.36.206/~publicacions/oai/oai.pl" name="Universitat de Barcelona"/>
-    <provider url="http://langtech1.ilc.cnr.it:8152/fedora/oai" name="Meta-Share Repository at ILC"/>
     <!--
       CHECK: tech problems
     -->
     <provider url="http://oai.hab.de/" name="Wolfenbuettel Digital Library"/>
-    <provider url="https://oai.datacite.org/oai" name="YODA repository at Utrecht University">
+    <provider url="https://oai.datacite.org/oai" name="DataCite">
         <!--
-           Set with additional filtering through custom query, see 
+           Sets with additional filtering through custom query, see 
            https://support.datacite.org/docs/datacite-oai-pmh#section-arbitrary-queries
-           
+        -->
+      
+        <!--
+           YODA repository at Utrecht University
            base64('subjects.subject:(*6.2* OR *6.5*)') = c3ViamVjdHMuc3ViamVjdDooKjYuMiogT1IgKjYuNSop
         -->
         <set>DELFT.UU~c3ViamVjdHMuc3ViamVjdDooKjYuMiogT1IgKjYuNSop</set>
+      
+        <!--
+           RDR (Radboud university) CLS and RICH
+           base64('prefix:10.34973 AND ((identifiers.identifier:*/rich/* OR identifiers.identifier:*/cls/*) AND NOT((rightsList.rightsUri:*closedAccess)))')
+        -->
+        <set>DELFT.RU~cHJlZml4OjEwLjM0OTczIEFORCAoKGlkZW50aWZpZXJzLmlkZW50aWZpZXI6Ki9yaWNoLyogT1IgaWRlbnRpZmllcnMuaWRlbnRpZmllcjoqL2Nscy8qKSBBTkQgTk9UKChyaWdodHNMaXN0LnJpZ2h0c1VyaToqY2xvc2VkQWNjZXNzKSkp</set>
+    </provider>
+    <provider url="https://api.researchdata.se/oai-pmh" name="Swedish National Data Service">
+        <!-- ISOF, see https://sprakresurser.isof.se/ -->
+        <set>principal:slug:institute-for-language-and-folklore</set>
+        <!-- subject "Language technology" -->
+        <set>subject:ssif:10208</set>
     </provider>
   </providers>
 </config>
