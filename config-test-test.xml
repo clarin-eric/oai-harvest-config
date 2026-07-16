@@ -92,50 +92,16 @@
   
   <!-- ### list of providers ### -->
   <providers>
-    <!--<provider url="http://archief.meertens.knaw.nl/oaiprovider/"/>
-    <provider url="http://www.elra.info/elrac/elra_catalogue.xml" static="true"
-	      name="European Language Resources Association"/>
-    <provider url="http://catalog.paradisec.org.au/oai/item"
-	      name="Pacific And Regional Archive for Digital Sources in Endangered Cultures (PARADISEC)"/>
-    <provider url="https://b2share.eudat.eu/oai2d/" name="B2SHARE">
-      <set>Linguistics</set>
-    </provider>
-    <provider url="http://clarino.uib.no/oai"/>
-    <provider url="https://repo.clarino.uib.no/oai/request"/>
-    <provider url="http://catalog.paradisec.org.au/oai/item"
-      name="Pacific And Regional Archive for Digital Sources in Endangered Cultures (PARADISEC)"/>
-    <provider url="https://lindat.mff.cuni.cz/repository/oai/request"/>
-    <provider url="https://arche.acdh.oeaw.ac.at/oai"/>
-    <provider url="https://clarinportulan.net/oaipmh/"/>
-    <provider url="https://www.meertens.knaw.nl/flat/oai2"/>
-    <provider url="http://www.meertens.knaw.nl/oai/oai_server.php"/>
-    <provider url="http://clarino.uib.no/oai"/>
-    <provider url="https://lindat.mff.cuni.cz/repository/oai/request"/>
-    <provider url="https://oai.cedifor.de/"/>
-    <provider url="https://www.meertens.knaw.nl/flat/oai2"/>
--->
-<!--
-    <provider url="https://oai.datacite.org/oai">
-      <filter>Subject and Keywords = Humanities - Languages and literature (6.2) or Humanities - Other humanities (6.5))</filter>
-      <set>DELFT.UU</set>
-    </provider>
+  
+	<provider url="https://clarino.uib.no/oai">
+		<set>GNC</set>
+		<set>CORYL</set>
+	</provider>
 
-    <provider url="https://www.meertens.knaw.nl/flat/oai2">
-      <filter>dwangarbeider</filter>
-    </provider>
--->
-<!-- 	<provider url="https://repository.clarin.is/repository/oai/request"/> -->
-	<provider url="https://mdc-oai.clarin-dev.eu/provider"/>
-<!--
-    <provider url="https://calames.abes.fr/oai/oai2.aspx" scenario="ListIdentifiers">
-      <set>130019801</set>
-    </provider>
-    <povider url="https://elar.bbaw.de/oai-pmh/"  scenario="ListIdentifiers">
-      <xpath-filter>not(starts-with(./oai:metadata/oai_dc:dc/dc:identifier,'oai:io:'))</xpath-filter>
-    </povider>
--->
-    <!--<provider url="ids">
-      <xpath-filter></xpath-filter>
-    </provider>-->
+
+	<provider url="https://clarino.uib.no//oai" name="FIN-CLARIN-test">
+		<set>FIN-CLARIN</set>
+	</provider>
+
   </providers>
 </config>
