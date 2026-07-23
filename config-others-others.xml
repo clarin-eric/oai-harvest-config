@@ -128,7 +128,7 @@
     </provider>
     <provider url="https://mdc-oai.clarin.eu/provider" name="Mozilla Data Collective" />
     <provider url="https://europeana-oai.clarin.eu/provider" name="Europeana"/>
-    <provider url="https://clarin-belarus.corpus.by/provider" name="corpus.by"/> 
+    <provider url="http://clarin-belarus.corpus.by/provider" name="corpus.by"/> 
 
     <!-- Linguist list: content to be evaluated before re-enabling -->
     <!--     
