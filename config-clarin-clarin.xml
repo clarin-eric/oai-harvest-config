@@ -143,16 +143,13 @@
       <config url="http://www.phonetik.uni-muenchen.de/cgi-bin/BASRepository/oaipmh/oai.pl" scenario="ListIdentifiers" timeout="300"/>
       <!-- CELR (Tartu) throws an error with 'verb=ListRecords&metadataPrefix=cmdi' but GetRecord calls seem to work -->
       <config url="https://metashare.ut.ee/oai_pmh/" scenario="ListIdentifiers"/>
+      <!--
+          FIN-CLARIN is harvested from the same endpoint as CLARINO. This is to override the name.
+          See <https://github.com/clarin-eric/metadata-curation/issues/12>.
+      -->
+      <config url="https://clarino.uib.no//oai" name="FIN-CLARIN" />
     </import>
     <!-- Virtual Collection Registry -->
      <provider url="https://collections.clarin.eu/oai"/>
-    <!--
-        FIN-CLARIN is harvested from the same endpoint as CLARINO but is defined separately here to avoid being listed under the same national project.
-        Note that the double slash in the URL is not a typo, but is there to meet the unique endpoint URL requirement.
-        See <https://github.com/clarin-eric/metadata-curation/issues/12>.
-    -->
-    <provider url="https://clarino.uib.no//oai" name="FIN-CLARIN">
-      <set>FIN-CLARIN</set>
-    </provider>
   </providers>
 </config>
