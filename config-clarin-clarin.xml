@@ -143,11 +143,24 @@
       <config url="http://www.phonetik.uni-muenchen.de/cgi-bin/BASRepository/oaipmh/oai.pl" scenario="ListIdentifiers" timeout="300"/>
       <!-- CELR (Tartu) throws an error with 'verb=ListRecords&metadataPrefix=cmdi' but GetRecord calls seem to work -->
       <config url="https://metashare.ut.ee/oai_pmh/" scenario="ListIdentifiers"/>
+      
       <!--
           FIN-CLARIN is harvested from the same endpoint as CLARINO. This is to override the name.
+          This endpoint URLs is registered in the centre registry. Note that an extra forward slash has been added
+          to ensure unique endpoint URLs.
           See <https://github.com/clarin-eric/metadata-curation/issues/12>.
       -->
       <config url="https://clarino.uib.no//oai" name="FIN-CLARIN" />
+      
+      <!--
+          SWELANG and Språkbanken (Göteborg) are both harvested from SND. These settings are to override the name.
+          The endpoint URLs are registered in the centre registry. Note that an extra forward slash has been added
+          to ensure unique endpoint URLs.
+          See <https://github.com/clarin-eric/metadata-curation/issues/20>.
+      -->
+      <config url="https://api.researchdata.se/oai-pmh" name="SWELANG" />
+      <config url="https://api.researchdata.se//oai-pmh" name="Spraakbanken-SE" />
+      
     </import>
     <!-- Virtual Collection Registry -->
      <provider url="https://collections.clarin.eu/oai"/>
