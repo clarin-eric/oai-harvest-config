@@ -159,7 +159,7 @@
           See <https://github.com/clarin-eric/metadata-curation/issues/20>.
       -->
       <config url="https://api.researchdata.se/oai-pmh" name="SWELANG" />
-      <config url="https://api.researchdata.se//oai-pmh" name="Spraakbanken-SE" />
+      <config url="https://api.researchdata.se/./oai-pmh" name="Spraakbanken-SE" />
       
     </import>
     <!-- Virtual Collection Registry -->
