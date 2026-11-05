@@ -160,6 +160,13 @@
            base64('prefix:10.34973 AND ((identifiers.identifier:*/rich/* OR identifiers.identifier:*/cls/*) AND NOT((rightsList.rightsUri:*closedAccess)))')
         -->
         <set>DELFT.RU~cHJlZml4OjEwLjM0OTczIEFORCAoKGlkZW50aWZpZXJzLmlkZW50aWZpZXI6Ki9yaWNoLyogT1IgaWRlbnRpZmllcnMuaWRlbnRpZmllcjoqL2Nscy8qKSBBTkQgTk9UKChyaWdodHNMaXN0LnJpZ2h0c1VyaToqY2xvc2VkQWNjZXNzKSkp</set>
+
+        <!--
+            GESIS ParlaCAP set(s)
+            base64('parlacap') = cGFybGFjYXA=
+            Data center name: GESIS.FFZG
+        -->
+        <set>GESIS.FFZG~cGFybGFjYXA=</set>
     </provider>
   </providers>
 </config>
